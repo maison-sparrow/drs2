@@ -11,7 +11,7 @@
     <body>
         <div id="wrapper">
             <div id="header">
-                <h1>日報管理システム</h1>
+                <h1><font color="#ffffff">日報管理システム</font></h1>
             </div>
             <div id="content">
                 ${param.content}
