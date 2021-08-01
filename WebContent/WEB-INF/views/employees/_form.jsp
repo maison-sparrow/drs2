@@ -17,7 +17,7 @@
 <input type="text" name="name" value="${employee.name}" />
 <br /><br />
 
-<label for="password">パスワード&nbsp;※英大文字、英小文字、数字、記号（@-_）を含み、8～50文字にしてください。</label><br />
+<label for="password">パスワード</label><br />
 <input type="password" name="password" />
 <br /><br />
 
