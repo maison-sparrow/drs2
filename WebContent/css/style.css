@@ -106,6 +106,20 @@ tr.row0 {
         background-color: #ffffff;
 }
 
+table.likes {
+    width: 7%;
+    table-layout: fixed;
+    border: #ffffff solid;
+}
+
+table.likes td {
+    border: #ffffff solid;
+}
+
+table.likes th {
+    border: #ffffff solid;
+}
+
 select {
     height: 30px;
 }
@@ -152,4 +166,8 @@ table#report_list .report_title {
 
 table#report_list .report_action {
     width: 13%;
+}
+
+pre {
+    font-family: "Hiragino Kaku Gothic Pro",Meiryo,"MS PGothic",Helvetica,Arial,sans-serif;
 }
