@@ -57,6 +57,9 @@ public class ReportsIndexServlet extends HttpServlet {
         if(request.getSession().getAttribute("flush") != null) { //flushがnullでないなら
             request.setAttribute("flush", request.getSession().getAttribute("flush")); //セッションスコープからリクエストスコープに移し
             request.getSession().removeAttribute("flush"); //セッションスコープは削除
+            if(request.getAttribute("flush") == "ログインしました。") {
+                request.removeAttribute("flush");
+            }
         }
 
         RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/reports/index.jsp");
