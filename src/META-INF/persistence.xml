@@ -7,13 +7,14 @@
 		<class>models.Likes</class>
 		<properties>
 			<property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
-			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost/drs2?useSSL=false&amp;useUnicode=true&amp;characterEncoding=utf8"/>
-			<property name="javax.persistence.jdbc.user" value="repuser"/>
-			<property name="javax.persistence.jdbc.password" value="reppass"/>
-			<property name="javax.persistence.schema-generation.database.action" value="create"/>
+			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://us-cdbr-east-04.cleardb.com/heroku_1377f93c41ea979?reconnect=true&amp;useSSL=false&amp;useUnicode=true&amp;characterEncoding=utf8&amp;characterSetResults=utf8"/>
+			<property name="javax.persistence.jdbc.user" value="bff30abc3affcc"/>
+			<property name="javax.persistence.jdbc.password" value="98a3b4aa"/>
 			<property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5Dialect"/>
 			<property name="hibernate.show_sql" value="true"/>
 			<property name="hibernate.format_sql" value="true"/>
+			<property name="javax.persistence.schema-generation.database.action" value="none"/>
+			<property name="javax.persistence.schema-generation.scripts.action" value="none"/>
 		</properties>
 	</persistence-unit>
 </persistence>
