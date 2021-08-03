@@ -20,11 +20,12 @@
                                 </tr>
                             </tbody>
                         </table>
-                        <form method="post" action="<c:url value='/reports/push_likes' />">
+                        <form style="display:inline" method="post" action="<c:url value='/reports/push_likes' />">
                             <input type="hidden" name="status" value="push_like" /> <input
                                 type="hidden" name="report_id" value="${report.id}" />
                             <button class="like_button" type="submit">いいね</button>
                         </form>
+                        &nbsp;<a href="<c:url value='/reports/likes_list' />">いいねを押した日報一覧へ</a>
                     </c:when>
                     <c:when test="${liked_more_than_one}">
                         <table class="likes">
@@ -36,14 +37,15 @@
                                 </tr>
                             </tbody>
                         </table>
-                        <form method="post" action="<c:url value='/reports/push_likes' />">
+                        <form style="display:inline" method="post" action="<c:url value='/reports/push_likes' />">
                             <input type="hidden" name="status" value="push_cancel" /> <input
                                 type="hidden" name="report_id" value="${report.id}" />
                             <button class="like_button" type="submit">いいね取消</button>
                         </form>
+                        &nbsp;<a href="<c:url value='/reports/likes_list' />">いいねを押した日報一覧へ</a>
                     </c:when>
                 </c:choose>
-
+                <br /><br />
                 <table>
                     <tbody>
                         <tr>
@@ -88,7 +90,7 @@
             <a href="<c:url value='/reports/index' />">日報一覧へ</a>
         </p>
         <p>
-            <a href="<c:url value='/reports/likes_list' />">いいねを押した日報一覧へ</a>
+
         </p>
     </c:param>
 </c:import>
