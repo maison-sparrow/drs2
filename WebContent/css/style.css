@@ -110,14 +110,20 @@ table.likes {
     width: 7%;
     table-layout: fixed;
     border: #ffffff solid;
+    border-collapse: collapse ;
+    border-spacing: 0;
+}
+
 }
 
 table.likes td {
     border: #ffffff solid;
+    padding: 1px;
 }
 
 table.likes th {
     border: #ffffff solid;
+    padding: 1px;
 }
 
 select {
@@ -173,6 +179,10 @@ pre {
 }
 
 .edit_link p{
- display:inline-block;
- vertical-align:top;
+    display:inline-block;
+    vertical-align:top;
+}
+
+.thin {
+    margin-bottom: 10px;
 }
