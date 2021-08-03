@@ -57,9 +57,9 @@
                         </tr>
                         <tr>
                             <th>内容</th>
-                            <td><pre>
-                                    <c:out value="${report.content}" />
-                                </pre></td>
+                            <td>
+                                <pre><c:out value="${report.content}" /></pre>
+                            </td>
                         </tr>
                         <tr>
                             <th>登録日時</th>
@@ -88,7 +88,7 @@
             <a href="<c:url value='/reports/index' />">日報一覧へ</a>
         </p>
         <p>
-            <a href="<c:url value='/reports/likes' />">いいねを押した日報一覧へ</a>
+            <a href="<c:url value='/reports/likes_list' />">いいねを押した日報一覧へ</a>
         </p>
     </c:param>
 </c:import>
