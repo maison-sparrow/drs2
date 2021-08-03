@@ -171,3 +171,8 @@ table#report_list .report_action {
 pre {
     font-family: "Hiragino Kaku Gothic Pro",Meiryo,"MS PGothic",Helvetica,Arial,sans-serif;
 }
+
+.edit_link p{
+ display:inline-block;
+ vertical-align:top;
+}

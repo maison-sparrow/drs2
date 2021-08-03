@@ -77,9 +77,12 @@
                 </table>
                 <!-- ログインしているEmployeeのidと、日報のEmployeeのidが同じ場合にeditへのリンク  -->
                 <c:if test="${sessionScope.login_employee.id == report.employee.id}">
-                    <p>
-                        <a href="<c:url value='/reports/edit?id=${report.id}' />">この日報を編集する</a>
+                    <div class="edit_link">
+                    <p><a href="<c:url value='/reports/edit?id=${report.id}' />">
+                        <img src="<c:url value='/edit_pencil.png' />" alt="編集" width="23" height="26"></p>
+                        <p>この日報を編集する</a></p>
                     </p>
+                    </div>
                 </c:if>
             </c:when>
             <c:otherwise>
