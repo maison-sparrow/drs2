@@ -16,7 +16,7 @@
                                 <tr>
                                     <th><img src="<c:url value='/like_white.png' />" alt="いいね"
                                         width="19" height="23"></th>
-                                    <td><c:out value="${likes_count}" /></td>
+                                    <td class="noborder"><c:out value="${likes_count}" /></td>
                                 </tr>
                             </tbody>
                         </table>
