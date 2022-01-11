@@ -5,11 +5,13 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
-@Table(name = "Likes_table")
+@Table(name = "likes_table")
 @NamedQueries({
     //ログインしている従業員がいいねを押した日報をSELECT
     //SELECT * FROM Likes_table WHERE Employee_id = 該当の従業員ID;
@@ -27,13 +29,13 @@ import javax.persistence.Table;
     //SELECT COUNT(*) FROM Likes_table WHERE report_id = 該当の日報ID;
     @NamedQuery(
             name = "getLikesCount",
-            query = "SELECT COUNT(l) FROM Likes AS l WHERE l.report_id = :report_id"
+            query = "SELECT COUNT(l) FROM Likes AS l WHERE l.report = :report"
     ),
-   //日報id、従業員idをしていしてLikesを取得
+   //日報id、従業員idを指定してLikesを取得
     //SELECT * FROM Likes_table WHERE report_id = 該当の日報ID AND employee_id = 該当の従業員ID;
     @NamedQuery(
             name = "getOneLikes",
-            query = "SELECT l FROM Likes AS l WHERE l.report_id = :report_id AND l.employee_id = :employee_id"
+            query = "SELECT l FROM Likes AS l WHERE l.report = :report AND l.employee_id = :employee_id"
     )
 
 })
@@ -44,8 +46,9 @@ public class Likes {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @Column(name = "report_id", nullable = false)
-    private int report_id;
+    @OneToOne
+    @JoinColumn(name = "report_id", nullable = false)
+    private Report report;
 
     @Column(name = "employee_id", nullable = false)
     private int employee_id;
@@ -58,12 +61,12 @@ public class Likes {
         this.id = id;
     }
 
-    public int getReport_id() {
-        return report_id;
+    public Report getReport() {
+        return report;
     }
 
-    public void setReport_id(int report_id) {
-        this.report_id = report_id;
+    public void setReport(Report report) {
+        this.report = report;
     }
 
     public int getEmployee_id() {
@@ -73,5 +76,6 @@ public class Likes {
     public void setEmployee_id(int employee_id) {
         this.employee_id = employee_id;
     }
+
 
 }

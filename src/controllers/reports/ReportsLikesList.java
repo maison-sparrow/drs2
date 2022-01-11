@@ -48,10 +48,20 @@ public class ReportsLikesList extends HttpServlet {
         for (int i = 0; i < likes_reports.size(); i++) { //いいねテーブルから取得したリストからレコードを1件ずつ
             Likes l = likes_reports.get(i); //取り出して
             Report r = em.createNamedQuery("getOneReport", Report.class) //日報idから日報オブジェクトを取得
-                                .setParameter("id", l.getReport_id())
+                                .setParameter("id", l.getReport())
                                 .getSingleResult();
             likes_reports2.add(r); //リストに入れる
         }
+
+
+
+        //List<Report> likes_reports3 = em.createNamedQuery("getAllReports", Report.class)
+        //        .setFirstResult(15 * (page - 1)) //どこから始めるか（インデックスは0始まり、1Pなら0から、2Pなら15から）
+        //        .setMaxResults(15) //最大件数、1始まりなので15件
+        //        .getResultList();
+
+
+
 
         em.close();
 

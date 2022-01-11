@@ -40,9 +40,8 @@ public class ReportsShowServlet extends HttpServlet {
 
         Employee e = (Employee) request.getSession().getAttribute("login_employee");
 
-        //★★★intに直す？
         long likes_count = (long)em.createNamedQuery("getLikesCount", Long.class)//,ラッパークラス.classでクエリの戻り値を指定しているので合わせる
-                    .setParameter("report_id", r.getId()) //namedqueryに引数が必要な場合はここに入れる
+                    .setParameter("report", r) //namedqueryに引数が必要な場合はここに入れる
                     .getSingleResult(); //全部で何件か
 
         //ログインしている従業員がこの日報にいいねを押したかどうか、falseだといいねを押せる
@@ -51,7 +50,7 @@ public class ReportsShowServlet extends HttpServlet {
 
         try {
             l = em.createNamedQuery("getOneLikes", Likes.class)
-                    .setParameter("report_id", r.getId())
+                    .setParameter("report", r)
                     .setParameter("employee_id", e.getId())
                     .getSingleResult();
         } catch (NoResultException ex) {

@@ -46,7 +46,7 @@ public class ReportsPushLikesServlet extends HttpServlet {
 
         if (status.equals("push_like")) {
             l.setEmployee_id(e.getId());
-            l.setReport_id(r.getId());
+            l.setReport(r);
 
             em.getTransaction().begin();
             em.persist(l);
@@ -55,7 +55,7 @@ public class ReportsPushLikesServlet extends HttpServlet {
         if (status.equals("push_cancel")) {
 
             l = em.createNamedQuery("getOneLikes", Likes.class)//,ラッパークラス.classでクエリの戻り値を指定しているので合わせる
-                    .setParameter("report_id", r.getId())
+                    .setParameter("report", r)
                     .setParameter("employee_id", e.getId())
                     .getSingleResult();
             em.getTransaction().begin();

@@ -39,8 +39,13 @@ import javax.persistence.Table;
     @NamedQuery(
             name = "getOneReport",
             query = "SELECT r FROM Report AS r WHERE r.id = :id"
-    )
-
+    ),
+  //日報id、従業員idを指定してReportを取得
+    //SELECT * FROM Reports WHERE id = 該当の日報ID AND employee_id = 該当の従業員ID;
+    @NamedQuery(
+            name = "getAllLikes",
+            query = "SELECT r FROM Report AS r WHERE r.id = :id AND r.employee = :employee_id"
+            )
 })
 @Entity
 public class Report {

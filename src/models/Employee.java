@@ -43,7 +43,7 @@ import javax.persistence.Table;
 public class Employee {
     @Id
     @Column(name = "id")
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY) // @GeneratedValue 主キー値を自動採番すること
     private Integer id;
 
     //uniqueは一意制約、すでに存在している社員番号は登録できないとDBに伝える設定
