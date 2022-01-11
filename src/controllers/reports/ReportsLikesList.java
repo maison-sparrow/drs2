@@ -47,11 +47,15 @@ public class ReportsLikesList extends HttpServlet {
 
         for (int i = 0; i < likes_reports.size(); i++) { //いいねテーブルから取得したリストからレコードを1件ずつ
             Likes l = likes_reports.get(i); //取り出して
+            Report Report_id = (Report)l.getReport();
             Report r = em.createNamedQuery("getOneReport", Report.class) //日報idから日報オブジェクトを取得
-                                .setParameter("id", l.getReport())
+                                .setParameter("id", Report_id.getId())
                                 .getSingleResult();
             likes_reports2.add(r); //リストに入れる
         }
+
+
+
 
 
 
